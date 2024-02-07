@@ -6,7 +6,7 @@ setup(
     version=__version__,
     packages=find_packages(),
     install_requires=[
-        'json-relational',
+        'json-relational>=0.0.3',
         'sqlalchemy',
         'pandas'
     ],

@@ -13,10 +13,12 @@ def main():
                         help="Database connection string.")
     parser.add_argument('--root', type=str, default="log",
                         help="Main table name containing the non-nested elements")
+    parser.add_argument('--pin_root', action='store_true', default=False,
+                        help="Map all nested children to the root level.")
 
     args = parser.parse_args()
 
-    json_processor = JsonProcessor(args.file, args.root)
+    json_processor = JsonProcessor(args.file, args.root, args.pin_root)
     json_tables = json_processor.process()
 
     sql_processor = SqlProcessor(f"sqlite:///{args.db}")

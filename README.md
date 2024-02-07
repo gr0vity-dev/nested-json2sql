@@ -70,12 +70,18 @@ The tool can handle two types of JSON files:
     json2sql --file multi_line_json.txt --db database.db
     ```
 
-3. **Multiple JSON Files**:
+3. **Multiple Files**:
 
-    To process multiple files, for example, `data1.json`, `data2.json`, and `data3.json`, use:
+    To process multiple files, for example, `data1.json`, `multi_line_json.txt`, and `data3.json`, use:
 
     ```bash
     json2sql --file data1.json multi_line_json.txt data3.json --db database.db
+    ```
+
+4. **Map all nested elements to root level:**
+    Add the `--pin_root` flag :
+    ```bash
+    json2sql --file data1.json multi_line_json.txt data3.json --db database.db --pin_root
     ```
 
 ## Contributions

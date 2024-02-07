@@ -8,9 +8,9 @@ def flatten_json_to_string(json_obj):
 
 
 class JsonProcessor:
-    def __init__(self, file_paths, root_name):
+    def __init__(self, file_paths, root_name, pin_root):
         self.file_paths = file_paths
-        self.jr = JsonRelational(root_name=root_name)
+        self.jr = JsonRelational(root_name=root_name, pin_root=pin_root)
 
     def process(self):
         combined_lines = []
